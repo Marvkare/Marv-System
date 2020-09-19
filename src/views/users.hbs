@@ -11,27 +11,73 @@
                     <th>nss</th>
                     <th>Cargo</th>
                     <th>Telefono</th>
+                    <th>{{direccion}}</th>
                     <th>email</th>
                 </tr>
             </thead>
             <tbody>
               <tr>
-                  <th>Miguel Angel </th>
-                  <th>Reyes Verdin</th>
-                  <th></th>
+                  {{#each data}}
+                     <th>{{nombre}}</th>
+                     <th>{{Apeidos}}</th>
+                     <th>{{edad}}</th>
+                     <th>{{fecha_n}}</th>
+                     <th>{{id}}</th>
+                     <th>{{rfc}}</th>
+                     <th>{{nss}}</th>
+                     <th>{{cargo}}</th>
+                     <th>{{telefono}}</th>
+                     <th>{{correo_electronico}}</th>
+                  {{/each}}
               </tr>
             </tbody>
         </table>
-        <form class="" action="/users/add" method="post">
-          <div class="">
-            <a href="#">First Name</a>
-            <input type="text" name="" value="">
-            <a href="#">Second Name</a>
-            <input type="text" name="" value="">
-            <a href="#">Last names</a>
-            <input type="text" name="" value="">
-            <a href="#">Date of birth</a>
-            <input type="date" id="start" name="trip-start" value="2018-07-22" min="2018-01-01" max="2018-12-31">
+        <form class="" action="/users/add" method="POST">
+          <div class="form-group">
+            <div class="container">
+              <div class="row">
+                <div class="col">
+                  <a href="#">First Name</a>
+                  <input class="form-control" type="text" name="First_Name" >
+                </div>
+                <div class="col">
+                  <a href="#">Last name</a>
+                  <input class="form-control" type="text" name="Last_name" >
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-4">
+                  <a href="#">Date of born</a>
+                  <input class="form-control" type="date" id="start" name="trip-start"  min="2018-01-01" max="2018-12-31">
+                </div>
+                <div class="col-4">
+                  <a href="#">Phone number</a>
+                  <input class="form-control" type="text" name="Phone_number" >
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <a href="#">Direction</a>
+                  <input class="form-control" type="text" name="Direction" >
+                </div>
+                <div class="col">
+                  <a href="#">RFC</a>
+                  <input class="form-control" type="text" name="RFC" >
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <a href="#">NSS</a>
+                  <input class="form-control" type="text" name="nss" >
+                </div>
+                <div class="col">
+                  <a href="#">Cargo</a>
+                  <input class="form-control" type="text" name="Cargo" >
+                </div>
+              </div>
+            </div>
           </div>
+          <button type="submint" >Enviar</button>
         </form>
+
     </div>

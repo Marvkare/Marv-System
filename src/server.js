@@ -6,6 +6,9 @@ const session = require('express-session')
 //Initializations
 const app = express();
 
+//base de datos
+app.use(require('./database'))
+
 //settings
 app.set('port', process.env.PORT || 3001)
 app.set('views', path.join(__dirname, 'views'))
@@ -17,6 +20,7 @@ app.engine('.hbs', exphbs({
 }))
 //Middlewares
 app.use(morgan('dev'))
+app.use(express.json())
 app.use(express.urlencoded({extended: false}))
 app.use(session({
   secret:'secret',
