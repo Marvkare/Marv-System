@@ -33,6 +33,7 @@ app.use(require('./routes/index.routes'))
 app.use(require('./routes/products.routes'))
 app.use(require('./routes/users.routes'))
 app.use(require('./routes/schedule.routes'))
+app.use(require('./routes/tools.routes'))
 //static files
-app.use(express.static(path.join(__dirname + '/src')));
+app.use(express.static(path.join(__dirname + '/public')));
 module.exports = app;
